@@ -1,0 +1,14 @@
+[ 2016-05-05T09:02:14+08:00 ] 123.151.42.46 /index.php?s=/Admin/Public/login.html
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000147s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000345s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.063356s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.064428s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.007625s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007747s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.015566s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015731s ]
+

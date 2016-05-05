@@ -1,0 +1,100 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <style>
+        .controls a { margin-left: 10px; text-decoration: none !important; }
+    </style>
+    <div class="main-title">
+        <h2>资料录入</h2>
+    </div>
+    <form action="{:U(Project/staffEdit)}" method="post" class="form-horizontal">
+        <div class="form-item">
+            <label class="item-label">组别<span class="check-tips"></span></label>
+            <div class="controls">
+                <select name="group">
+                	<option value="">请选择分组</option>
+                    <foreach name="conf.COMPANY_GROUP" item="vo">
+                        <option value="{$key}" <?php if($key==$data['group']){ echo "selected"; } ?>>{$vo}</option>
+                    </foreach>
+                </select>
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">区域<span class="check-tips"></span></label>
+            <div class="controls">
+                <select name="area">
+                    <option value="">请选择所在地区</option>
+                    <foreach name="conf.AREA" item="vo">
+                        <option value="{$key}" <?php if($key==$data['area']){ echo "selected"; } ?>>{$vo}</option>
+                    </foreach>
+                </select>
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">企业名称</label>
+            <div class="controls">
+                <input type="text" class="text" name="company"  placeholder="请输入企业名称" value="{$data.company}">
+            </div>      
+        </div>
+        <div class="form-item">
+            <label class="item-label">企业类别</label>
+            <div class="controls">
+                <select name="company_type">
+                    <option value="">请选择企业类别</option>
+                    <foreach name="conf.COMPANY_TYPE" item="vo">
+                        <option value="{$key}" <?php if($key==$data['company_type']){ echo "selected"; } ?>>{$vo}</option>
+                    </foreach>
+                </select>
+            </div>      
+        </div>
+        <div class="form-item">
+            <label class="item-label">企业负责人</label>
+            <div class="controls">
+                <input type="text" class="text" name="company_person"  placeholder="请输入企业负责人名称" value="{$data.company_person}">
+            </div>      
+        </div>
+        <div class="form-item">
+            <label class="item-label">联系方式</label>
+            <div class="controls">
+                <input type="text" class="text" name="company_phone"  placeholder="请输入企业联系方式" value="{$data.company_phone}">
+            </div>      
+        </div>
+        <div class="form-item">
+            <label class="item-label">挂钩干部姓名</label>
+            <div class="controls">
+                <input type="text" class="text" name="name"  placeholder="请输入挂钩干部姓名名称" value="{$data.name}">
+            </div>      
+        </div>
+        <div class="form-item">
+            <label class="item-label">联系方式</label>
+            <div class="controls">
+                <input type="text" class="text" name="phone"  placeholder="请输入联系方式" value="{$data.phone}">
+            </div>      
+        </div>
+        <div class="form-item">
+            <label class="item-label">单位部门</label>
+            <div class="controls">
+                <input type="text" class="text" name="department"  placeholder="请输入单位部门" value="{$data.department}">
+            </div>      
+        </div>
+        <div class="form-item">
+            <label class="item-label">单位职务</label>
+            <div class="controls">
+                <input type="text" class="text" name="duty"  placeholder="请输入单位职务" value="{$data.duty}">
+            </div>      
+        </div>
+        <input type="hidden" name="id" value="{$data.id}" />
+        <div class="form-item">
+            <button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+    </form>
+</block>
+</block>
+
+<block name="script">
+    <script type="text/javascript">
+        //导航高亮
+        highlight_subnav('{:U('Staff/index')}');
+    </script>
+</block>

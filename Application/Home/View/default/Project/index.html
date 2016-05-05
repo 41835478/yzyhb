@@ -1,0 +1,102 @@
+<extend name="Base/common"/>
+
+<block name="body">
+<section style="margin-top:0px">
+  <notempty name="data.no">
+	<div class="span12">
+      <form class="login-form" action="{:U(Project/index)}" method="post">
+        	<table class="table table-bordered table-striped responsive-utilities">
+              <tr>
+                  <td width="20%">评价编号</td>
+                  <td>{$data.no}</td>
+              </tr>
+              <tr>
+                  <td>事件类型</td>
+                  <td><?php echo $conf['PROJECT_TYPE'][$data['type']]; ?></td>
+              </tr>
+              <tr>
+                  <td>受评类型</td>
+                  <td><?php echo $conf['TO'][$data['to']]; ?></td>
+              </tr>
+              <tr>
+                  <td>受评详细</td>
+                  <td>
+					            <table class="table table-bordered table-striped responsive-utilities">
+		                    <thead>
+		                        <tr>
+		                            <th>姓名</th>
+		                            <th>部门</th>
+		                            <th>职务</th>
+		                            <th>关联企业</th>
+		                        </tr>
+		                    </thead>
+		                    <tbody>
+                            <volist name="data.staff" id="vo" key="i">
+		                        <tr>
+		                            <td>{$vo.name}</td>
+                                <td>{$vo.department}</td>
+                                <td>{$vo.duty}</td>
+                                <td>{$vo.company}</td>
+		                        </tr>
+                            </volist>
+		                    </tbody>
+		                  </table>
+                  </td>
+              </tr>
+              <tr>
+                  <td>评价等级</td>
+                  <td>                   
+                        <input type="radio" name="rank" id="optionsRadios1" value="1"> 好评
+                        &nbsp;&nbsp;
+                        <input type="radio" name="rank" id="optionsRadios2" value="2"> 中评
+                        &nbsp;&nbsp;
+                        <input type="radio" name="rank" id="optionsRadios3" value="3"> 差评
+                  </td>
+              </tr>
+              <tr><td colspan="2">此评价由扬州市优化企业发展环境办公室适时推送，评价结果由优化办采集，对评价人保密。</td></tr>
+          </table>
+          <div class="control-group">
+              <div class="controls">
+                  <input type="hidden" name="project_id" value="{$data.id}">
+                  <input type="hidden" name="project_no" value="{$data.no}">
+                  <button type="submit" class="btn">提交</button>
+              </div>
+          </div>
+      </form>
+	</div>
+  <else />
+      <div class="span12">该评价事件不存在或者已经删除！</div>
+  </notempty>
+</section>
+
+</block>
+
+
+<block name="script">
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript">
+      wx.ready(function () {
+        var url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=<?php echo C('WECHAT_APPID'); ?>&redirect_uri=";
+        url += "http://" + window.location.host + "/index.php?s=/Home/Project/index/id/<?php echo $_GET['id']; ?>&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect";
+        // url += window.location.href;
+        wx.onMenuShareAppMessage({
+            title: '请您评价', // 分享标题
+            desc: '请您对编号{$data.no}的服务进行评价。', // 分享描述
+            link: url, // 分享链接
+            imgUrl: '<?php echo "http://".I("server.HTTP_HOST")."/img/pingjia.png" ?>', // 分享图标
+            type: '', // 分享类型,music、video或link，不填默认为link
+            dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+        });
+      });
+
+      wx.config({
+        debug: false, 
+        appId: '{:C("WECHAT_APPID")}', 
+        timestamp:  <?php echo $tokenArr['now']; ?>,
+        nonceStr: "<?php echo $tokenArr['nonceStr']; ?>", 
+        signature: "<?php echo $tokenArr['signature']; ?>",
+        jsApiList: ['onMenuShareAppMessage'] 
+      }); 
+
+    </script>
+</block>

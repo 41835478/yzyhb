@@ -1,0 +1,70 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <style>
+        .controls a { margin-left: 10px; text-decoration: none !important; }
+        .data-table { width:660px;}
+    </style>
+    <div class="main-title">
+        <h2>评价详情</h2>
+    </div>
+    <form action="{:U()}" method="post" class="form-horizontal">
+        <div class="form-item">
+            <label class="item-label">评价编号<span class="check-tips"></span></label>
+            <div class="controls"><span>{$data.no}</span></div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">事件类型<span class="check-tips"></span></label>
+            <div class="controls"><span><?php echo $conf['PROJECT_TYPE'][$data['type']]; ?></span></div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">受评类型<span class="check-tips"></span></label>
+            <div class="controls"><span><?php echo $conf['TO'][$data['to']]; ?></span></div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">创建时间<span class="check-tips"></span></label>
+            <div class="controls">{$data.date|date="Y-m-d H:i:s",###}</div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">受评详细</label>
+            <div class="controls">
+                <div class="data-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>姓名</th>
+                            <th>部门</th>
+                            <th>职务</th>
+                            <th>关联企业</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <volist name="data.staff" id="vo" key="i">
+                        <tr>
+                            <td>{$vo.name}</td>
+                            <td>{$vo.department}</td>
+                            <td>{$vo.duty}</td>
+                            <td>{$vo.company}</td>
+                        </tr>
+                        </volist>
+                    </tbody>
+                </table>
+                </div>      
+            </div>
+        </div>   
+        <div class="form-item">
+            <label class="item-label">总体评价<span class="check-tips"></span></label>
+            <div class="controls">
+                好评数：<span style="color:red">{$data.rank.r_1}</span>&nbsp;&nbsp;
+                中评数：<span style="color:green">{$data.rank.r_2}</span>&nbsp;&nbsp;
+                差评数：<span style="color:grey">{$data.rank.r_3}</span></div>
+        </div>
+        <div class="form-item">
+            <button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+    </form>
+</block>
+
+
+</block>

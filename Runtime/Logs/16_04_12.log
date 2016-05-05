@@ -1,0 +1,32 @@
+[ 2016-04-12T16:48:27+08:00 ] 218.91.152.220 /
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.015263s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.001218s ]
+SQL: SHOW COLUMNS FROM `onethink_document` [ RunTime:0.025448s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`status` FROM `onethink_document` WHERE ( `status` = 1 ) AND ( `pid` = 0 ) AND ( `create_time` < 1460450907 ) AND ( deadline = 0 OR deadline > 1460450907 ) ORDER BY `id` DESC  [ RunTime:0.001336s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000104s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000282s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.083678s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.083901s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.010006s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.010149s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.019857s ]
+INFO: [ app_end ] --END-- [ RunTime:0.020080s ]
+
+[ 2016-04-12T16:48:28+08:00 ] 218.91.152.220 /index.php?s=/Admin/Public/login.html
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000184s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000362s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.030166s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031141s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000708s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000907s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001459s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001671s ]
+

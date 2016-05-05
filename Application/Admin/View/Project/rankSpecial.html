@@ -1,0 +1,81 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <div class="main-title">
+        <h2>评价记录</h2>
+    </div>
+    <!-- 按钮工具栏 -->
+    <div class="cf">
+        <div class="fl">
+            <!-- <a class="btn" href="{:U("Project/projectAdd")}">新增</a> -->
+        </div>
+    </div>
+
+    <!-- 数据表格 -->
+    <div class="data-table">
+        <table>
+            <!-- 表头 -->
+            <thead>
+                <tr>
+                    <th class="row-selected row-selected">
+                        <input class="check-all" type="checkbox">
+                    </th>
+                    <th>评价人昵称</th>
+                    <th>头像</th>
+                    <th>事件编号</th>
+                    <th>总体评价</th>
+                    <th>服务质量</th>
+                    <th>服务效率</th>
+                    <th>服务态度</th>
+                    <th>评价时间</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <!-- 列表 -->
+            <tbody>
+                <volist name="list" id="vo">
+                <tr>
+                    <td><input class="ids" type="checkbox" value="{$vo.id}" name="ids[]"></td>
+                    <td>{$vo.user_nickname}</td>
+                    <td><img src="{$vo.user_img}" width="40px" height="40px" /></td>
+                    <td><a href="{:U('Project/specialView',array('id'=>$vo['project_id']))}" target="blank">{$vo.project_no}</a></td>
+                    <td><?php echo $conf['RANK'][$vo['rank']]; ?></td>
+                    <td>{$vo.rank_info_1}星</td>
+                    <td>{$vo.rank_info_2}星</td>
+                    <td>{$vo.rank_info_3}星</td>
+                    <td>{$vo.rank_date|date="Y-m-d",###}</td>
+                    <td><a href="{:U('Project/projectDel')}&ids={$vo.id}" class="confirm ajax-get">删除</a></td>  
+                </tr>
+                </volist>
+            </tbody>
+        </table>
+    </div>
+
+
+    <!-- 分页 -->
+    <div class="page">
+        {$_page}
+    </div>
+</block>
+
+<block name="script">
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.showqr').hover(
+                function(){
+                    var con = $(this).attr('id');
+                    var id  = con.split("_")[1];
+                    $('#qrcode_'+id).show(300);
+                   
+                },
+                function(){
+                    var con = $(this).attr('id');
+                    var id  = con.split("_")[1];
+                    $('#qrcode_'+id).hide(300);
+                }
+            );
+        });
+    </script>
+</block>
+
+</block>

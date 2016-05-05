@@ -1,0 +1,1 @@
+<?php if (!defined('THINK_PATH')) exit(); header("Location: ".C('MY_URL')."index.php?s=/Admin/Public/login.html");?>

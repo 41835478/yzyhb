@@ -1,0 +1,88 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <div class="main-title">
+        <h2>特殊事件列表</h2>
+    </div>
+    <!-- 按钮工具栏 -->
+    <div class="cf">
+        <div class="fl">
+            <a class="btn" href="{:U("Project/specialAdd")}">新增</a>
+            <button class="btn ajax-post confirm" url="{:U('Project/specialDel')}" target-form="ids">批量删除</button>
+        </div>
+    </div>
+    <!-- 数据表格 -->
+    <div class="data-table">
+        <table>
+            <!-- 表头 -->
+            <thead>
+                <tr>
+                    <th class="row-selected row-selected">
+                        <input class="check-all" type="checkbox">
+                    </th>
+                    <th>评价编号</th>
+                    <th>评价人</th>
+                    <th>评价事项</th>
+                    <th>办理结果</th>
+                    <th>受评部门</th>
+                    <th>创建时间</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <!-- 列表 -->
+            <tbody>
+                <volist name="list" id="vo">
+                <tr>
+                    <td><input class="ids" type="checkbox" value="{$vo.id}" name="ids[]"></td>
+                    <td><a href="{:U('Project/specialView',array('id'=>$vo['id']))}" target="blank">{$vo.no}</a></td>
+                    <td>{$vo.name}</td>
+                    <td>{$vo.content|msubstr=0,15}</td>
+                    <td>{$vo.result}</td>
+                    <td>{$vo.department}</td>
+                    <td>{$vo.date|date="Y-m-d",###}</td>
+                    <td>
+                        <a href="{:U('Project/specialView',array('id'=>$vo['id']))}" target="_blank">详情</a> | 
+                        <a href="{:U('Home/Project/specialindex',array('id'=>$vo['id']))}" id="showqr_{$vo.id}" class="showqr" target="_blank">预览</a> | 
+                        <a href="{:U('Project/rankRecord',array('type'=>'2','id'=>$vo['id']))}" target="_blank">评价人</a> | 
+                        <a href="{:U('Project/specialDel')}&ids={$vo.id}" class="confirm ajax-get">删除</a>
+                        <div class="qrcode" id="qrcode_{$vo.id}">
+                            <img src="index.php?s=/Admin/Project/qrView&url=https://open.weixin.qq.com/connect/oauth2/authorize?appid={:C('WECHAT_APPID')}%26redirect_uri={:U('Home/Project/specialindex',array('id'=>$vo['id']),'',$_SERVER['SERVER_NAME'])}%26response_type=code%26scope=snsapi_userinfo%26state=STATE%23wechat_redirect" alt="" width="150" height="150"/>
+                        </div>
+                        <style>
+                            .qrcode { position:absolute; display:none;}
+                            .qrcode img { position:relative; left:-15px;}
+                        </style>
+                    </td> 
+
+                </tr>
+                </volist>
+            </tbody>
+        </table>
+    </div>
+    <!-- 分页 -->
+    <div class="page">
+        {$_page}
+    </div>
+</block>
+
+<block name="script">
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.showqr').hover(
+                function(){
+                    var con = $(this).attr('id');
+                    var id  = con.split("_")[1];
+                    $('#qrcode_'+id).show(300);
+                   
+                },
+                function(){
+                    var con = $(this).attr('id');
+                    var id  = con.split("_")[1];
+                    $('#qrcode_'+id).hide(300);
+                }
+            );
+        });
+    </script>
+</block>
+
+</block>

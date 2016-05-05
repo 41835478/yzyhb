@@ -1,0 +1,73 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <style>
+        .controls a { margin-left: 10px; text-decoration: none !important; }
+        .data-table { width:660px;}
+    </style>
+    <div class="main-title">
+        <h2>特殊事件详情</h2>
+    </div>
+    <form action="{:U()}" method="post" class="form-horizontal">
+        <div class="form-item">
+            <label class="item-label">评价编号<span class="check-tips"></span></label>
+            <div class="controls"><span>{$data.no}</span></div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">评价人<span class="check-tips"></span></label>
+            <div class="controls"><span>{$data.name}</span></div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">受评部门<span class="check-tips"></span></label>
+            <div class="controls"><span>{$data.department}</span></div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">评价事项<span class="check-tips"></span></label>
+            <div class="controls"><span>{$data.content}</span></div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">办理结果<span class="check-tips"></span></label>
+            <div class="controls"><span>{$data.result}</span></div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">创建时间<span class="check-tips"></span></label>
+            <div class="controls"><span>{$data.date|date="Y-m-d H:i:s",###}</span></div>
+        </div>
+        <div class="form-item">
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+    </form>
+</block>
+
+</block>
+<block name="script">
+    <script type="text/javascript">
+        //导航高亮
+        highlight_subnav('{:U('Project/specialIndex')}');
+    </script>
+    <script src="__STATIC__/jQueryRaty/jquery.raty.js" type="text/javascript"></script>
+    <script type="text/javascript">         
+        $('#star_1').raty({ 
+            hints: ['1', '2', '3', '4', '5'],
+            scoreName: 'rank_info_1',
+        });
+        $('#star_2').raty({ 
+            hints: ['1', '2', '3', '4', '5'],
+            scoreName: 'rank_info_2'
+        });
+        $('#star_3').raty({ 
+            hints: ['1', '2', '3', '4', '5'],
+            scoreName: 'rank_info_3'
+        });
+     </script>
+     <notempty name="data.rank">
+        <script type="text/javascript">         
+            $('#star_1').raty('score', {$data.rank_info_1});
+            $('#star_1').raty('readOnly', true);
+            $('#star_2').raty('score', {$data.rank_info_2});
+            $('#star_2').raty('readOnly', true);
+            $('#star_3').raty('score', {$data.rank_info_3});
+            $('#star_3').raty('readOnly', true);
+         </script>
+     </notempty>
+</block>

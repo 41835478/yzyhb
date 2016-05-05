@@ -1,0 +1,90 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <style>
+        .controls a { margin-left: 10px; text-decoration: none !important; }
+    </style>
+    <div class="main-title">
+        <h2>新建事件</h2>
+    </div>
+    <form action="{:U(Project/projectAdd)}" method="post" class="form-horizontal">
+        <div class="form-item">
+            <label class="item-label">事件类型<span class="check-tips"></span></label>
+            <div class="controls">
+                <select name="type">
+                	<option value="">请选择事件类型</option>
+                    <foreach name="conf.projectType" item="vo">
+                        <option value="{$key}">{$vo}</option>
+                    </foreach>
+                </select>
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">受评类型<span class="check-tips"></span></label>
+            <div class="controls">
+                <select name="to">
+                    <option value="">请选择受评类型</option>
+                    <foreach name="conf.to" item="vo">
+                        <option value="{$key}">{$vo}</option>
+                    </foreach>
+                </select>
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">受评详细</label>
+            <div class="controls">
+                <input type="text" class="text input-small staff" name="staff[0][name]" id="staff_name_0" placeholder="姓名" >
+                <input type="text" class="text input-small" name="staff[0][duty]" id="staff_duty_0" placeholder="职务" >
+                <input type="text" class="text input-small" name="staff[0][department]" id="staff_department_0" placeholder="部门" >
+                <input type="text" class="text" name="staff[0][company]" id="staff_company_0" placeholder="挂联企业" >
+                <a href="javasript:void(0);" class="staffAdd"><i class="icon-add"></i></a>
+            </div>  
+            <input type="hidden" id="mark" value="0" />  
+        </div>
+
+        <div class="form-item">
+            <button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+    </form>
+</block>
+</block>
+
+<block name="script">
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.form-item').on("click",".staffAdd",function() {
+                var count  = parseInt($('#mark').val()) + 1;
+                var string = '<div class="controls"><input type="text" class="text input-small staff" name="staff['+count+'][name]" placeholder="姓名" id="staff_name_'+count+'" > <input type="text" class="text input-small" name="staff['+count+'][duty]" placeholder="职务" id="staff_duty_'+count+'" > <input type="text" class="text input-small" name="staff['+count+'][department]" placeholder="部门" id="staff_department_'+count+'" > <input type="text" class="text" name="staff['+count+'][company]" placeholder="挂联企业" id="staff_company_'+count+'" > <a href="javasript:void(0);" class="staffAdd"><i class="icon-add"></i></a></div>';
+                 $('.controls:last').after(string);
+                 $('#mark').attr('value',count);
+            });
+
+            $('.form-item').on("blur",".staff",function() {
+                var name  = $(this).val();
+                var id    = $(this).attr('id');  // 获取id值
+                var count = id.split("_")[2];    // 获取行数（第几行）
+                $.get("{:U(Project/projectAdd)}", {name: name}, function(data) {
+                    var domData = jQuery.parseJSON(data);
+                    var duty       = domData.duty;
+                    var department = domData.department;
+                    var company    = domData.company;
+
+                    $('#staff_duty_'+count).val(duty);
+                    $('#staff_department_'+count).val(department);
+                    $('#staff_company_'+count).val(company);
+
+                    //$('#staff_duty_0').attr('value',duty); 
+
+                });
+
+            })
+
+
+            // var jsonData = '{"fish":"fish","cat":"cat"}';
+            // var domData = jQuery.parseJSON(jsonData);
+            // alert(domData.fish);
+
+        })
+    </script>
+</block>

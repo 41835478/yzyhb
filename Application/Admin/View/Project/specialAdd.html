@@ -1,0 +1,52 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <style>
+        .controls a { margin-left: 10px; text-decoration: none !important; }
+    </style>
+    <div class="main-title">
+        <h2>新建“马上就办”</h2>
+    </div>
+    <form action="{:U()}" method="post" class="form-horizontal">
+        <div class="form-item">
+            <label class="item-label">评价人</label>
+            <div class="controls">
+                <input type="text" class="text" name="name" >
+            </div>      
+        </div>
+        <div class="form-item">
+            <label class="item-label">受评部门</label>
+            <div class="controls">
+                <input type="text" class="text" name="department" >
+            </div>      
+        </div>
+        <div class="form-item">
+            <label class="item-label">评价事项</label>
+            <div class="controls">
+                <label class="textarea input-large">
+                        <textarea name="content"></textarea>
+                </label>                   
+             </div>      
+        </div>
+        <div class="form-item">
+            <label class="item-label">办理结果</label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="result" >
+            </div>      
+        </div>
+        <div class="form-item">
+            <button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+    </form>
+</block>
+
+</block>
+
+
+<block name="script">
+    <script type="text/javascript">
+        //导航高亮
+        highlight_subnav('{:U('Project/specialIndex')}');
+    </script>
+</block>

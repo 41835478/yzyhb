@@ -1,0 +1,2652 @@
+[ 2016-04-22T09:00:28+08:00 ] 218.91.152.220 /
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.023012s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.001292s ]
+SQL: SHOW COLUMNS FROM `onethink_document` [ RunTime:0.021780s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`status` FROM `onethink_document` WHERE ( `status` = 1 ) AND ( `pid` = 0 ) AND ( `create_time` < 1461286827 ) AND ( deadline = 0 OR deadline > 1461286827 ) ORDER BY `id` DESC  [ RunTime:0.002136s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000100s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000271s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.091984s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.092212s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.008499s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.008681s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.011685s ]
+INFO: [ app_end ] --END-- [ RunTime:0.011849s ]
+
+[ 2016-04-22T09:00:28+08:00 ] 218.91.152.220 /index.php?s=/Admin/Public/login.html
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000175s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000327s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.031911s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032917s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000877s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001008s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001437s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001577s ]
+
+[ 2016-04-22T09:00:35+08:00 ] 218.91.152.220 /index.php?s=/Admin/Public/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001260s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002065s ]
+SQL: SHOW COLUMNS FROM `onethink_ucenter_member` [ RunTime:0.036433s ]
+SQL: SELECT * FROM `onethink_ucenter_member` WHERE ( `username` = 'admin' ) LIMIT 1   [ RunTime:0.000779s ]
+
+[ 2016-04-22T09:00:46+08:00 ] 218.91.152.220 /index.php?s=/Admin/Public/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001639s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002520s ]
+SQL: SHOW COLUMNS FROM `onethink_ucenter_member` [ RunTime:0.005979s ]
+SQL: SELECT * FROM `onethink_ucenter_member` WHERE ( `username` = 'admin' ) LIMIT 1   [ RunTime:0.000348s ]
+SQL: UPDATE `onethink_ucenter_member` SET `last_login_time`=1461286845,`last_login_ip`='3663435996' WHERE ( `id` = 1 ) [ RunTime:0.000648s ]
+SQL: SHOW COLUMNS FROM `onethink_member` [ RunTime:0.026933s ]
+SQL: SELECT `uid`,`nickname`,`sex`,`birthday`,`qq`,`score`,`login`,`reg_ip`,`reg_time`,`last_login_ip`,`last_login_time`,`status` FROM `onethink_member` WHERE ( `uid` = 1 ) LIMIT 1   [ RunTime:0.000851s ]
+SQL: SHOW COLUMNS FROM `onethink_action` [ RunTime:0.027075s ]
+SQL: SELECT * FROM `onethink_action` WHERE ( `name` = 'user_login' ) LIMIT 1   [ RunTime:0.006176s ]
+SQL: SHOW COLUMNS FROM `onethink_action_log` [ RunTime:0.014448s ]
+SQL: INSERT INTO `onethink_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (1,1,-631531300,'member',1,1461286845,'admin在2016-04-22 09:00登录了后台') [ RunTime:0.005850s ]
+SQL: SELECT * FROM `onethink_action` WHERE ( `name` = 'user_login' ) LIMIT 1   [ RunTime:0.000483s ]
+NOTIC: [8] Undefined offset: 1 E:\freehost\www\linshikongjian\web\Application\Common\Common\function.php 第 665 行.
+NOTIC: [2] array_key_exists() expects parameter 2 to be array, null given E:\freehost\www\linshikongjian\web\Application\Common\Common\function.php 第 665 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_action_log` WHERE ( `action_id` = 1 ) AND ( `user_id` = 1 ) AND ( `create_time` > 1461200445 ) LIMIT 1   [ RunTime:0.013924s ]
+SQL: UPDATE `onethink_member` SET `login`=`login`+1,`last_login_time`=1461286845,`last_login_ip`='3663435996' WHERE ( `uid` = 1 ) [ RunTime:0.000609s ]
+
+[ 2016-04-22T09:00:46+08:00 ] 218.91.152.220 /index.php?s=/Admin/Index/index.html
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.020525s ]
+SQL: SELECT * FROM `onethink_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.006660s ]
+SQL: SELECT `id` FROM `onethink_menu` WHERE ( url like '%Index/index%' ) LIMIT 1   [ RunTime:0.000610s ]
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.005588s ]
+SQL: SELECT `id`,`pid`,`title` FROM `onethink_menu` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000630s ]
+SQL: SELECT DISTINCT  `group` FROM `onethink_menu` WHERE ( pid = 1 )  [ RunTime:0.000824s ]
+SQL: SELECT `id`,`url` FROM `onethink_menu` WHERE ( `pid` = 1 ) AND ( `hide` = 0 )  [ RunTime:0.000579s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000173s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000303s ]
+INFO: [ AdminIndex ] --START--
+SQL: SHOW COLUMNS FROM `onethink_addons` [ RunTime:0.018038s ]
+SQL: SELECT `config` FROM `onethink_addons` WHERE ( `name` = 'SiteStat' ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.002397s ]
+SQL: SHOW COLUMNS FROM `onethink_member` [ RunTime:0.002450s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_member` LIMIT 1   [ RunTime:0.000214s ]
+SQL: SHOW COLUMNS FROM `onethink_action_log` [ RunTime:0.002147s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_action_log` LIMIT 1   [ RunTime:0.000185s ]
+SQL: SHOW COLUMNS FROM `onethink_document` [ RunTime:0.002466s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_document` LIMIT 1   [ RunTime:0.000186s ]
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.002552s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_category` LIMIT 1   [ RunTime:0.000183s ]
+SQL: SHOW COLUMNS FROM `onethink_model` [ RunTime:0.014458s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_model` LIMIT 1   [ RunTime:0.000239s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000044s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.090904s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.005468s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005531s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000369s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000418s ]
+INFO: Run SiteStat [ RunTime:0.080569s ]
+SQL: SELECT `config` FROM `onethink_addons` WHERE ( `name` = 'SystemInfo' ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000343s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000067s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.155465s ]
+SQL: select version() as v; [ RunTime:0.000229s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.010238s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.054569s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000010s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.064461s ]
+INFO: Run SystemInfo [ RunTime:0.064487s ]
+SQL: SELECT `config` FROM `onethink_addons` WHERE ( `name` = 'DevTeam' ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000379s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000047s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.179984s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.004558s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.084033s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000010s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.088229s ]
+INFO: Run DevTeam [ RunTime:0.023741s ]
+INFO: [ AdminIndex ] --END-- [ RunTime:0.168932s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.004765s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.084033s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000009s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.088426s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000633s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000708s ]
+
+[ 2016-04-22T09:01:34+08:00 ] 218.91.152.220 /index.php?s=/Admin/Project/index.html
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.005841s ]
+SQL: SELECT * FROM `onethink_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000363s ]
+SQL: SELECT `id` FROM `onethink_menu` WHERE ( url like '%Project/index%' ) LIMIT 1   [ RunTime:0.000684s ]
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.006431s ]
+SQL: SELECT `id`,`pid`,`title` FROM `onethink_menu` WHERE ( id=122 ) LIMIT 1   [ RunTime:0.000545s ]
+SQL: SELECT DISTINCT  `group` FROM `onethink_menu` WHERE ( pid = 122 )  [ RunTime:0.000893s ]
+SQL: SELECT `id`,`url` FROM `onethink_menu` WHERE ( `pid` = 122 ) AND ( `hide` = 0 )  [ RunTime:0.000537s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE ( `group` = '评价事件' ) AND ( `pid` = 122 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000649s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE ( `group` = '特殊事件' ) AND ( `pid` = 122 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000608s ]
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.026136s ]
+SQL: SELECT * FROM `onethink_project`  [ RunTime:0.000731s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000479s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000663s ]
+NOTIC: [8] Undefined index:  E:\freehost\www\linshikongjian\web\Runtime\Cache\Admin\c9b29f46aaf66743c1e179410e6dbdf8.php 第 129 行.
+NOTIC: [8] Undefined index:  E:\freehost\www\linshikongjian\web\Runtime\Cache\Admin\c9b29f46aaf66743c1e179410e6dbdf8.php 第 129 行.
+NOTIC: [8] Undefined variable: _page E:\freehost\www\linshikongjian\web\Runtime\Cache\Admin\c9b29f46aaf66743c1e179410e6dbdf8.php 第 141 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.048354s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.048516s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001011s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001135s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001386s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001519s ]
+
+[ 2016-04-22T09:01:36+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/11.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.002368s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 11 ) LIMIT 1   [ RunTime:0.000262s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000123s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000240s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.011948s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.002784s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 91 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.002605s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000248s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000046s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.029050s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003892s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003979s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000322s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000380s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.004505s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003979s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000009s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000211s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000541s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000598s ]
+
+[ 2016-04-22T09:01:53+08:00 ] 218.91.152.220 /
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.005177s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000335s ]
+SQL: SHOW COLUMNS FROM `onethink_document` [ RunTime:0.005106s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`status` FROM `onethink_document` WHERE ( `status` = 1 ) AND ( `pid` = 0 ) AND ( `create_time` < 1461286913 ) AND ( deadline = 0 OR deadline > 1461286913 ) ORDER BY `id` DESC  [ RunTime:0.000555s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000082s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000215s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.012718s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012846s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000717s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000820s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001173s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001289s ]
+
+[ 2016-04-22T09:01:53+08:00 ] 218.91.152.220 /index.php?s=/Admin/Public/login.html
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000141s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000262s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.011417s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012105s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000670s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000766s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001070s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001179s ]
+
+[ 2016-04-22T09:02:53+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/11.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.008826s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 11 ) LIMIT 1   [ RunTime:0.000482s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000275s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000452s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.008395s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000326s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 91 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.011019s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000366s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000101s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.038059s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.008002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008211s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000905s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001035s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.009545s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008211s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000023s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000476s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001500s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001626s ]
+
+[ 2016-04-22T09:02:55+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/11.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.005533s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 11 ) LIMIT 1   [ RunTime:0.000430s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000301s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000489s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.006338s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000384s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 91 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.006397s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000369s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000099s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.032373s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.007990s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008229s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001168s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.009709s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008229s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000023s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000519s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001395s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001520s ]
+
+[ 2016-04-22T09:04:17+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/11.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.004753s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 11 ) LIMIT 1   [ RunTime:0.000433s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000236s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000384s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.004995s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000331s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 91 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.006374s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000277s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000100s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.028927s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.007206s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007386s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000683s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000800s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.008478s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007386s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000020s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000429s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001601s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001750s ]
+
+[ 2016-04-22T09:04:18+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/11.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.004637s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 11 ) LIMIT 1   [ RunTime:0.000259s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000219s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000345s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.004769s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000237s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 91 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.005025s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000246s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000078s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.023166s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.006320s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006465s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000700s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000800s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.007492s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006465s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000018s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000346s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001131s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001232s ]
+
+[ 2016-04-22T09:04:30+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/11.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.004987s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 11 ) LIMIT 1   [ RunTime:0.000382s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000307s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000507s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.005595s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000370s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 91 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.006288s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000487s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000102s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.028727s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.008195s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008377s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000712s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000837s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.009501s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008377s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000022s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000436s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001194s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001322s ]
+
+[ 2016-04-22T09:04:31+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/11.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.001912s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 11 ) LIMIT 1   [ RunTime:0.000161s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000104s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000159s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.002113s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000116s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 91 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.002200s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000106s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000046s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.010169s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.002889s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002957s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000253s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000312s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003407s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002957s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000008s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000206s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000527s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000587s ]
+
+[ 2016-04-22T09:04:32+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/11.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.005723s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 11 ) LIMIT 1   [ RunTime:0.000338s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000368s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000604s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.005490s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000287s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 91 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.005668s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000287s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000099s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.026966s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.007851s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008079s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000669s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000795s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.009107s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008079s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000022s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000426s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001376s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001501s ]
+
+[ 2016-04-22T09:04:33+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/11.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.005217s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 11 ) LIMIT 1   [ RunTime:0.000350s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000277s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000442s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.006739s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000293s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 91 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.005919s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000393s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000107s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.029125s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.008521s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008708s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000698s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000823s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.009828s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008708s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000022s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000450s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001209s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001336s ]
+
+[ 2016-04-22T09:04:55+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/13.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.005870s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 13 ) LIMIT 1   [ RunTime:0.000582s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000274s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000425s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.004787s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000274s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 91 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.006113s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000279s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000089s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.024563s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.006630s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006825s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000651s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000775s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.007725s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006825s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000019s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000291s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001022s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001132s ]
+
+[ 2016-04-22T09:04:59+08:00 ] 218.91.152.220 /index.php?s=/Admin/Config/group.html
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.002400s ]
+SQL: SELECT * FROM `onethink_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000148s ]
+SQL: SELECT `id` FROM `onethink_menu` WHERE ( url like '%Config/group%' ) LIMIT 1   [ RunTime:0.000256s ]
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.002599s ]
+SQL: SELECT `id`,`pid`,`title` FROM `onethink_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000220s ]
+SQL: SELECT DISTINCT  `group` FROM `onethink_menu` WHERE ( pid = 68 )  [ RunTime:0.000316s ]
+SQL: SELECT `id`,`url` FROM `onethink_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.000222s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000279s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000240s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000251s ]
+SQL: SHOW COLUMNS FROM `onethink_config` [ RunTime:0.002510s ]
+SQL: SELECT `id`,`name`,`title`,`extra`,`value`,`remark`,`type` FROM `onethink_config` WHERE ( `status` = 1 ) AND ( `group` = 1 ) ORDER BY sort  [ RunTime:0.000305s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000196s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000285s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.023953s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024043s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000300s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000351s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000464s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000519s ]
+
+[ 2016-04-22T09:05:02+08:00 ] 218.91.152.220 /index.php?s=/Admin/User/index.html
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.002389s ]
+SQL: SELECT * FROM `onethink_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000282s ]
+SQL: SELECT `id` FROM `onethink_menu` WHERE ( url like '%User/index%' ) LIMIT 1   [ RunTime:0.000237s ]
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.002385s ]
+SQL: SELECT `id`,`pid`,`title` FROM `onethink_menu` WHERE ( id=16 ) LIMIT 1   [ RunTime:0.000226s ]
+SQL: SELECT DISTINCT  `group` FROM `onethink_menu` WHERE ( pid = 16 )  [ RunTime:0.000328s ]
+SQL: SELECT `id`,`url` FROM `onethink_menu` WHERE ( `pid` = 16 ) AND ( `hide` = 0 )  [ RunTime:0.000259s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE ( `group` = '用户管理' ) AND ( `pid` = 16 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000263s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE ( `group` = '行为管理' ) AND ( `pid` = 16 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000249s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE ( `group` = '' ) AND ( `pid` = 16 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000231s ]
+SQL: SHOW COLUMNS FROM `onethink_member` [ RunTime:0.002181s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_member` WHERE ( `status` >= 0 ) AND ( `nickname` LIKE '%%' ) LIMIT 1   [ RunTime:0.000271s ]
+SQL: SELECT `uid`,`nickname`,`sex`,`birthday`,`qq`,`score`,`login`,`reg_ip`,`reg_time`,`last_login_ip`,`last_login_time`,`status` FROM `onethink_member` WHERE ( `status` >= 0 ) AND ( `nickname` LIKE '%%' ) ORDER BY uid desc LIMIT 0,10   [ RunTime:0.000448s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000236s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000361s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.032139s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032292s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000579s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000670s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000697s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000773s ]
+
+[ 2016-04-22T09:05:03+08:00 ] 218.91.152.220 /index.php?s=/Admin/Staff/index.html
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.002293s ]
+SQL: SELECT * FROM `onethink_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000142s ]
+SQL: SELECT `id` FROM `onethink_menu` WHERE ( url like '%Staff/index%' ) LIMIT 1   [ RunTime:0.000291s ]
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.002006s ]
+SQL: SELECT `id`,`pid`,`title` FROM `onethink_menu` WHERE ( id=131 ) LIMIT 1   [ RunTime:0.000199s ]
+SQL: SELECT DISTINCT  `group` FROM `onethink_menu` WHERE ( pid = 131 )  [ RunTime:0.000293s ]
+SQL: SELECT `id`,`url` FROM `onethink_menu` WHERE ( `pid` = 131 ) AND ( `hide` = 0 )  [ RunTime:0.000199s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE ( `group` = '关联资料' ) AND ( `pid` = 131 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000231s ]
+SQL: SHOW COLUMNS FROM `onethink_staff` [ RunTime:0.027487s ]
+SQL: SELECT * FROM `onethink_staff`  [ RunTime:0.000320s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000153s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000223s ]
+NOTIC: [8] Undefined variable: _page E:\freehost\www\linshikongjian\web\Runtime\Cache\Admin\a8f99bcd1c7274cebea7ba6bf31be760.php 第 140 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.025427s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025501s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000306s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000356s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000466s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000519s ]
+
+[ 2016-04-22T09:05:56+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/13.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.003147s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 13 ) LIMIT 1   [ RunTime:0.000153s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000112s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000177s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.002267s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000118s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 91 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.002412s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000117s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000042s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.010848s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003213s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003288s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000279s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000329s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003696s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003288s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000009s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000138s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000476s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000526s ]
+
+[ 2016-04-22T09:06:17+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/13.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.003266s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 13 ) LIMIT 1   [ RunTime:0.000273s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000191s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000301s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.003648s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000195s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 91 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.003847s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000195s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000068s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.017752s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.005276s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005406s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000467s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000550s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.006077s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005406s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000015s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000225s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000812s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000895s ]
+
+[ 2016-04-22T09:06:29+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/13.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.001865s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 13 ) LIMIT 1   [ RunTime:0.000138s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000106s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000165s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.002117s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000112s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 84 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.002288s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000122s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000037s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.010311s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.002947s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003017s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000269s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000319s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003413s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003017s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000009s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000133s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000482s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000530s ]
+
+[ 2016-04-22T09:06:30+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/13.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.005283s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 13 ) LIMIT 1   [ RunTime:0.000477s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000288s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000463s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.005517s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000369s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 84 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.006130s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000408s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000101s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.027008s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.007630s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007815s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000682s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000806s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.008802s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007815s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000021s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000331s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001349s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001477s ]
+
+[ 2016-04-22T09:06:43+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/13.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.005572s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 13 ) LIMIT 1   [ RunTime:0.000364s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000277s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000447s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.008359s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000371s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 84 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.009352s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000393s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000116s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.034598s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.008392s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008621s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001036s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001244s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.010308s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008621s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000038s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000592s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001866s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002092s ]
+
+[ 2016-04-22T09:07:06+08:00 ] 180.153.6.103 /index.php?s=/Home/Project/index/id/13.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.019088s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 13 ) LIMIT 1   [ RunTime:0.000602s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000271s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000655s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.016837s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.002725s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 84 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.007594s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000349s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.040402s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.004505s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004628s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000283s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000332s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.004987s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004628s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000009s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000134s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000528s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000577s ]
+
+[ 2016-04-22T09:07:06+08:00 ] 113.108.80.206 /index.php?s=/Home/Project/index/id/13.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.015427s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 13 ) LIMIT 1   [ RunTime:0.000540s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000110s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000174s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.002489s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000140s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 84 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.002148s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000155s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000040s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.011103s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003044s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003116s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000280s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000331s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003524s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003116s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000029s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000133s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000485s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000534s ]
+
+[ 2016-04-22T09:07:06+08:00 ] 183.60.35.29 /index.php?s=/Home/Project/index/id/13.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.003199s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 13 ) LIMIT 1   [ RunTime:0.000155s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000109s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000167s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.002041s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000303s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 84 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.002577s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000142s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000042s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.011200s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003166s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003238s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000274s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000324s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003641s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003238s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000009s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000135s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000468s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000519s ]
+
+[ 2016-04-22T09:07:38+08:00 ] 14.17.18.152 /index.php?s=/home/project/specialindex.html
+NOTIC: [8] Undefined variable: conf E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 55 行.
+NOTIC: [8] Undefined variable: data E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 56 行.
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 57 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000488s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000780s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.006825s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000307s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\300b925655b72f3e20b2fef41d5d6adc.php 第 84 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.005750s ]
+SQL: SELECT `pid` FROM `onethink_category` WHERE ( `name` = null ) LIMIT 1   [ RunTime:0.000442s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `pid` = null ) AND ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000583s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000097s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.031089s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.008080s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008248s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000820s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000976s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.009473s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008248s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000035s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000462s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.002023s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002218s ]
+
+[ 2016-04-22T09:07:49+08:00 ] 112.90.78.25 /index.php?s=/home/project/index.html
+NOTIC: [8] Undefined variable: conf E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 34 行.
+NOTIC: [8] Undefined variable: data E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 35 行.
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000271s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000444s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.005326s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000438s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 84 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.005786s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000340s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000102s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.027529s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.007902s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008063s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000702s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000826s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.009071s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008063s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000022s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000303s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001201s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001324s ]
+
+[ 2016-04-22T09:08:01+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/13.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.005620s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 13 ) LIMIT 1   [ RunTime:0.000409s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000438s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000685s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.006799s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000351s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 84 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.006559s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000420s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000160s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.035839s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.012954s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013244s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001044s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001271s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.014845s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013244s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000041s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000583s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001848s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002071s ]
+
+[ 2016-04-22T09:09:26+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/13.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.006171s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 13 ) LIMIT 1   [ RunTime:0.000685s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000279s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000449s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.005457s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000312s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 84 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.007274s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000373s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000141s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.030127s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.008735s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008946s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000985s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001142s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.010406s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008946s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000038s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000562s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001462s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001621s ]
+
+[ 2016-04-22T09:09:43+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/13.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.001963s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 13 ) LIMIT 1   [ RunTime:0.000145s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000115s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000188s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.002547s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000119s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 84 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.002368s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000121s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000042s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.011905s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003340s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003417s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000313s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000362s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003857s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003417s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000009s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000138s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000517s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000567s ]
+
+[ 2016-04-22T09:09:44+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/13.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.008310s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 13 ) LIMIT 1   [ RunTime:0.000482s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000434s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000667s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.005682s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000568s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 84 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.006316s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000307s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000105s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.484113s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.008799s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008987s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000935s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001097s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.010291s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008987s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000024s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000356s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001310s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001437s ]
+
+[ 2016-04-22T15:32:54+08:00 ] 218.91.152.220 /
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.007824s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000535s ]
+SQL: SHOW COLUMNS FROM `onethink_document` [ RunTime:0.009206s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`status` FROM `onethink_document` WHERE ( `status` = 1 ) AND ( `pid` = 0 ) AND ( `create_time` < 1461310374 ) AND ( deadline = 0 OR deadline > 1461310374 ) ORDER BY `id` DESC  [ RunTime:0.000736s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000135s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000339s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.046088s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046239s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000771s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000895s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001432s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001561s ]
+
+[ 2016-04-22T15:32:54+08:00 ] 218.91.152.220 /index.php?s=/Admin/Public/login.html
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000180s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000343s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.016705s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017586s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000720s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000844s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001224s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001372s ]
+
+[ 2016-04-22T15:33:29+08:00 ] 218.91.152.220 /
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.005391s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000355s ]
+SQL: SHOW COLUMNS FROM `onethink_document` [ RunTime:0.005021s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`status` FROM `onethink_document` WHERE ( `status` = 1 ) AND ( `pid` = 0 ) AND ( `create_time` < 1461310409 ) AND ( deadline = 0 OR deadline > 1461310409 ) ORDER BY `id` DESC  [ RunTime:0.000648s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000084s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000219s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.013425s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013556s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000628s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000733s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001053s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001167s ]
+
+[ 2016-04-22T15:33:29+08:00 ] 218.91.152.220 /index.php?s=/Admin/Public/login.html
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000152s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000288s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.012653s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013453s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000605s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000711s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001015s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001126s ]
+
+[ 2016-04-22T16:33:43+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/13.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.006663s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 13 ) LIMIT 1   [ RunTime:0.000312s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000273s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000442s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.006338s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000294s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 84 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.006798s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000580s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000101s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.030528s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.008141s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008324s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000844s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000973s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.009534s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008324s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000022s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000354s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001621s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001747s ]
+
+[ 2016-04-22T16:35:06+08:00 ] 218.91.152.220 /index.php?s=/Admin/Project/index.html
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.006786s ]
+SQL: SELECT * FROM `onethink_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000375s ]
+SQL: SELECT `id` FROM `onethink_menu` WHERE ( url like '%Project/index%' ) LIMIT 1   [ RunTime:0.000262s ]
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.005281s ]
+SQL: SELECT `id`,`pid`,`title` FROM `onethink_menu` WHERE ( id=122 ) LIMIT 1   [ RunTime:0.000288s ]
+SQL: SELECT DISTINCT  `group` FROM `onethink_menu` WHERE ( pid = 122 )  [ RunTime:0.000263s ]
+SQL: SELECT `id`,`url` FROM `onethink_menu` WHERE ( `pid` = 122 ) AND ( `hide` = 0 )  [ RunTime:0.000272s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE ( `group` = '评价事件' ) AND ( `pid` = 122 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000411s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE ( `group` = '特殊事件' ) AND ( `pid` = 122 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000302s ]
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.005603s ]
+SQL: SELECT * FROM `onethink_project`  [ RunTime:0.000492s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000361s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000521s ]
+NOTIC: [8] Undefined index:  E:\freehost\www\linshikongjian\web\Runtime\Cache\Admin\c9b29f46aaf66743c1e179410e6dbdf8.php 第 129 行.
+NOTIC: [8] Undefined index:  E:\freehost\www\linshikongjian\web\Runtime\Cache\Admin\c9b29f46aaf66743c1e179410e6dbdf8.php 第 129 行.
+NOTIC: [8] Undefined variable: _page E:\freehost\www\linshikongjian\web\Runtime\Cache\Admin\c9b29f46aaf66743c1e179410e6dbdf8.php 第 141 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.075888s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.076031s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000890s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001238s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001327s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001467s ]
+
+[ 2016-04-22T16:35:09+08:00 ] 218.91.152.220 /index.php?s=/Admin/Project/specialIndex.html
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.005738s ]
+SQL: SELECT * FROM `onethink_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000512s ]
+SQL: SELECT `id` FROM `onethink_menu` WHERE ( url like '%Project/specialindex%' ) LIMIT 1   [ RunTime:0.000839s ]
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.006003s ]
+SQL: SELECT `id`,`pid`,`title` FROM `onethink_menu` WHERE ( id=125 ) LIMIT 1   [ RunTime:0.000622s ]
+SQL: SELECT `id`,`pid`,`title` FROM `onethink_menu` WHERE ( id=122 ) LIMIT 1   [ RunTime:0.000373s ]
+SQL: SELECT DISTINCT  `group` FROM `onethink_menu` WHERE ( pid = 122 )  [ RunTime:0.000333s ]
+SQL: SELECT `id`,`url` FROM `onethink_menu` WHERE ( `pid` = 122 ) AND ( `hide` = 0 )  [ RunTime:0.000411s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE ( `group` = '评价事件' ) AND ( `pid` = 122 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000434s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE ( `group` = '特殊事件' ) AND ( `pid` = 122 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000387s ]
+SQL: SHOW COLUMNS FROM `onethink_special` [ RunTime:0.029824s ]
+SQL: SELECT * FROM `onethink_special`  [ RunTime:0.000855s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000369s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000539s ]
+NOTIC: [8] Undefined index:  E:\freehost\www\linshikongjian\web\Runtime\Cache\Admin\7e1d70b4c8bd3596f73941c4f51c3127.php 第 127 行.
+NOTIC: [8] Undefined index:  E:\freehost\www\linshikongjian\web\Runtime\Cache\Admin\7e1d70b4c8bd3596f73941c4f51c3127.php 第 127 行.
+NOTIC: [8] Undefined variable: _page E:\freehost\www\linshikongjian\web\Runtime\Cache\Admin\7e1d70b4c8bd3596f73941c4f51c3127.php 第 137 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.052505s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.052718s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000900s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001024s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001290s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001427s ]
+
+[ 2016-04-22T16:35:10+08:00 ] 218.91.152.220 /index.php?s=/Admin/Project/index.html
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.008297s ]
+SQL: SELECT * FROM `onethink_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000469s ]
+SQL: SELECT `id` FROM `onethink_menu` WHERE ( url like '%Project/index%' ) LIMIT 1   [ RunTime:0.000392s ]
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.005898s ]
+SQL: SELECT `id`,`pid`,`title` FROM `onethink_menu` WHERE ( id=122 ) LIMIT 1   [ RunTime:0.000302s ]
+SQL: SELECT DISTINCT  `group` FROM `onethink_menu` WHERE ( pid = 122 )  [ RunTime:0.000272s ]
+SQL: SELECT `id`,`url` FROM `onethink_menu` WHERE ( `pid` = 122 ) AND ( `hide` = 0 )  [ RunTime:0.000269s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE ( `group` = '评价事件' ) AND ( `pid` = 122 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000293s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE ( `group` = '特殊事件' ) AND ( `pid` = 122 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000284s ]
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.005589s ]
+SQL: SELECT * FROM `onethink_project`  [ RunTime:0.000446s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000367s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000528s ]
+NOTIC: [8] Undefined index:  E:\freehost\www\linshikongjian\web\Runtime\Cache\Admin\c9b29f46aaf66743c1e179410e6dbdf8.php 第 129 行.
+NOTIC: [8] Undefined index:  E:\freehost\www\linshikongjian\web\Runtime\Cache\Admin\c9b29f46aaf66743c1e179410e6dbdf8.php 第 129 行.
+NOTIC: [8] Undefined variable: _page E:\freehost\www\linshikongjian\web\Runtime\Cache\Admin\c9b29f46aaf66743c1e179410e6dbdf8.php 第 141 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.065455s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.065628s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000988s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001114s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001200s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001334s ]
+
+[ 2016-04-22T16:35:12+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/11.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.005301s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 11 ) LIMIT 1   [ RunTime:0.000347s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000289s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000477s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.006141s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000304s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 90 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.006651s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000297s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000104s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.032563s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.011059s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011258s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000682s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000810s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.012343s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011258s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000022s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000439s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001232s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001360s ]
+
+[ 2016-04-22T16:44:34+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/11.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.005281s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 11 ) LIMIT 1   [ RunTime:0.000318s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000352s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000550s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.004769s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000296s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 103 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.007319s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000245s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000077s ]
+INFO: [ template_filter ] --END-- [ RunTime:-1.235898s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.006298s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006443s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000620s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000716s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.007379s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006443s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000017s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000336s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001041s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001134s ]
+
+[ 2016-04-22T16:45:21+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/11.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.004508s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 11 ) LIMIT 1   [ RunTime:0.000309s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000333s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000542s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.005628s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000397s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 103 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.006078s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000292s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000151s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.400676s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.008704s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008902s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000817s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000946s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.010165s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008902s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000023s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000440s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001334s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001463s ]
+
+[ 2016-04-22T16:45:42+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/11.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.005463s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 11 ) LIMIT 1   [ RunTime:0.000424s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000297s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000465s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.006546s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000499s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 103 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.007943s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000792s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000161s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.204662s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.013357s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013648s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001283s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001499s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.015650s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013648s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000040s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000731s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.002339s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002593s ]
+
+[ 2016-04-22T16:46:23+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/11.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.005645s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 11 ) LIMIT 1   [ RunTime:0.000385s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000297s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000551s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.007372s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000305s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 103 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.007527s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000334s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000102s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.198121s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.008880s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009199s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001359s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001574s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.011311s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009199s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000040s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000742s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.002125s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002350s ]
+
+[ 2016-04-22T16:49:00+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/11.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.004369s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 11 ) LIMIT 1   [ RunTime:0.000268s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000301s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000469s ]
+NOTIC: [8] Undefined variable: arr E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 30 行.
+NOTIC: [8] Trying to get property of non-object E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 30 行.
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.005188s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000435s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 103 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.006342s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000424s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000101s ]
+INFO: [ template_filter ] --END-- [ RunTime:-1.378880s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.008382s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008562s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000873s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001005s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.009923s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008562s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000023s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000459s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001602s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001728s ]
+
+[ 2016-04-22T16:50:07+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/11.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.005281s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 11 ) LIMIT 1   [ RunTime:0.000340s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000498s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000784s ]
+NOTIC: [8] Undefined variable: content E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 30 行.
+NOTIC: [8] Undefined variable: arr E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 30 行.
+NOTIC: [8] Trying to get property of non-object E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 30 行.
+NOTIC: [8] Undefined variable: content E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 30 行.
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.005468s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000300s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 103 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.005793s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000274s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000095s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.334966s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.007972s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008129s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000787s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000905s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.009321s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008129s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000020s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000412s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001258s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001377s ]
+
+[ 2016-04-22T16:50:11+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/11.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.005471s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 11 ) LIMIT 1   [ RunTime:0.000343s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000336s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000515s ]
+NOTIC: [8] Undefined variable: content E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 30 行.
+NOTIC: [8] Undefined variable: arr E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 30 行.
+NOTIC: [8] Trying to get property of non-object E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 30 行.
+NOTIC: [8] Undefined variable: content E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 30 行.
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.008421s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000513s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 103 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.008971s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000407s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000103s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.316424s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.008411s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008583s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000875s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.009888s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008583s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000022s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000442s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001349s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001473s ]
+
+[ 2016-04-22T16:50:37+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/11.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.005683s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 11 ) LIMIT 1   [ RunTime:0.000334s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000329s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000543s ]
+NOTIC: [8] Undefined variable: content E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 30 行.
+NOTIC: [8] Undefined variable: arr E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 30 行.
+NOTIC: [8] Trying to get property of non-object E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 30 行.
+NOTIC: [8] Undefined variable: content E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 30 行.
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.002557s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000123s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 103 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.002264s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000115s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000043s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.759683s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003329s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003398s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000339s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000389s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003923s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003398s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000008s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000195s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000555s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000606s ]
+
+[ 2016-04-22T16:51:07+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/11.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.004965s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 11 ) LIMIT 1   [ RunTime:0.000329s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000505s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000794s ]
+NOTIC: [8] Undefined variable: content E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 30 行.
+NOTIC: [8] Undefined variable: arr E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 30 行.
+NOTIC: [8] Trying to get property of non-object E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 30 行.
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.002761s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000129s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 103 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.003057s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000130s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:-1.214596s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003404s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003481s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000355s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000406s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.004085s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003481s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000014s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000234s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000557s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000625s ]
+
+[ 2016-04-22T16:51:11+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/11.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.001936s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 11 ) LIMIT 1   [ RunTime:0.000128s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000113s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000167s ]
+NOTIC: [8] Undefined variable: content E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 30 行.
+NOTIC: [8] Undefined variable: arr E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 30 行.
+NOTIC: [8] Trying to get property of non-object E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 30 行.
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.006315s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000292s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 103 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.005918s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000312s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000101s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.149533s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.009549s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009780s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000869s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000996s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.011018s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009780s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000022s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000440s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001351s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001474s ]
+
+[ 2016-04-22T16:51:35+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/11.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.005261s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 11 ) LIMIT 1   [ RunTime:0.000351s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000303s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000466s ]
+NOTIC: [8] Undefined variable: arr E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 30 行.
+NOTIC: [8] Trying to get property of non-object E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 30 行.
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.006369s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000309s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 103 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.005927s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000329s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000120s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.155832s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.008470s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008701s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000865s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000988s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.009931s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008701s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000023s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000439s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001381s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001506s ]
+
+[ 2016-04-22T16:51:36+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/11.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.002061s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 11 ) LIMIT 1   [ RunTime:0.000136s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000134s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000201s ]
+NOTIC: [8] Undefined variable: arr E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 30 行.
+NOTIC: [8] Trying to get property of non-object E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 30 行.
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.002520s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000123s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 103 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.002430s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000122s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000043s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.136360s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003583s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003668s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000350s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000402s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.004205s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003668s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000009s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000198s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000568s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000619s ]
+
+[ 2016-04-22T16:52:04+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/11.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.005587s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 11 ) LIMIT 1   [ RunTime:0.000369s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000298s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000477s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.005843s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000334s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 103 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.006621s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000316s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000103s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.225422s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.008579s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008772s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000831s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000956s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.010024s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008772s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000023s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000447s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001653s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001782s ]
+
+[ 2016-04-22T16:53:25+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/11.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.004269s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 11 ) LIMIT 1   [ RunTime:0.000309s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000243s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000369s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.006060s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000327s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 103 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.006496s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000386s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000104s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.346750s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.008707s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008892s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000948s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001077s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.010285s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008892s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000022s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000449s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001444s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001569s ]
+
+[ 2016-04-22T17:01:39+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/11.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.005276s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 11 ) LIMIT 1   [ RunTime:0.000496s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000306s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000475s ]
+NOTIC: [8] Undefined variable: ticket E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 39 行.
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.006050s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000329s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 103 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.006462s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000401s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000149s ]
+INFO: [ template_filter ] --END-- [ RunTime:-1.424444s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.012358s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012559s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000810s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000943s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.013772s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012559s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000021s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000439s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001243s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001358s ]
+
+[ 2016-04-22T17:05:40+08:00 ] 218.91.152.220 /index.php?s=/Admin/Public/login.html&from=singlemessage&isappinstalled=0
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000200s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000377s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.017322s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018271s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000820s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000944s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001668s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001841s ]
+
+[ 2016-04-22T17:05:50+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/11.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.002147s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 11 ) LIMIT 1   [ RunTime:0.000136s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000144s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000223s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.002502s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000119s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 120 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.002270s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000118s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.377249s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003407s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003469s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000319s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000366s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003972s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003469s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000008s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000187s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000501s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000548s ]
+
+[ 2016-04-22T17:06:04+08:00 ] 183.232.120.54 /index.php?s=/Home/Project/index/id/11.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.005064s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 11 ) LIMIT 1   [ RunTime:0.000372s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000497s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000776s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.006033s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000305s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 120 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.005944s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000310s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000100s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.396143s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.008087s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008257s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000804s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000931s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.009492s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008257s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000023s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000439s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001782s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001947s ]
+
+[ 2016-04-22T17:06:04+08:00 ] 183.60.15.14 /index.php?s=/Home/Project/index/id/11.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.004878s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 11 ) LIMIT 1   [ RunTime:0.000481s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000313s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000473s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.005587s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000309s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 120 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.006407s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000325s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000101s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.332335s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.008042s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008209s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000862s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000989s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.009508s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008209s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000022s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000447s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001306s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001431s ]
+
+[ 2016-04-22T17:06:11+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/11.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.005094s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 11 ) LIMIT 1   [ RunTime:0.000405s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000316s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000481s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.006316s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000328s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 120 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.006242s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000317s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000100s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.329022s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.008051s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008216s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000857s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000985s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.009518s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008216s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000023s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000449s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001309s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001433s ]
+
+[ 2016-04-22T17:06:28+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/11.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.006129s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 11 ) LIMIT 1   [ RunTime:0.000323s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000314s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000477s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.002698s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000175s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 120 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.002320s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000120s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.267591s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003278s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003341s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000315s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000364s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003840s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003341s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000008s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000184s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000541s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000589s ]
+
+[ 2016-04-22T17:08:16+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/11.html&from=singlemessage&isappinstalled=0
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.007313s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 11 ) LIMIT 1   [ RunTime:0.000350s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000337s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000509s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.002798s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000122s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 120 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.002539s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000115s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000046s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.301935s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003639s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003703s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000353s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000403s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.004254s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003703s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000014s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000242s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000558s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000619s ]
+
+[ 2016-04-22T17:08:46+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/11.html&from=singlemessage&isappinstalled=0
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.003808s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 11 ) LIMIT 1   [ RunTime:0.000306s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000274s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000409s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.004490s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000269s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 120 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.004503s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000299s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.348141s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.006467s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006600s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000739s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000879s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.007792s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006600s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000018s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000376s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001034s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001134s ]
+
+[ 2016-04-22T17:10:45+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/11.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.002042s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 11 ) LIMIT 1   [ RunTime:0.000129s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000134s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000210s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.002514s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000119s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 120 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.002299s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000114s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.330877s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003086s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003150s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000357s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000419s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003727s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003150s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000009s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000182s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000589s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000641s ]
+
+[ 2016-04-22T17:12:22+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/11.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.008296s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 11 ) LIMIT 1   [ RunTime:0.000387s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000334s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000505s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.008785s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000395s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 120 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.006351s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000314s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000102s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.586436s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.008663s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008833s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000821s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000950s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.010105s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008833s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000024s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000462s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001394s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001520s ]
+
+[ 2016-04-22T17:15:34+08:00 ] 218.91.152.220 /index.php
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.007007s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000480s ]
+SQL: SHOW COLUMNS FROM `onethink_document` [ RunTime:0.010964s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`status` FROM `onethink_document` WHERE ( `status` = 1 ) AND ( `pid` = 0 ) AND ( `create_time` < 1461316533 ) AND ( deadline = 0 OR deadline > 1461316533 ) ORDER BY `id` DESC  [ RunTime:0.001005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000101s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000256s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.015434s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015595s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000842s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000967s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001327s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001460s ]
+
+[ 2016-04-22T17:15:34+08:00 ] 218.91.152.220 /index.php?s=/Admin/Index/index.html
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.006021s ]
+SQL: SELECT * FROM `onethink_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000712s ]
+SQL: SELECT `id` FROM `onethink_menu` WHERE ( url like '%Index/index%' ) LIMIT 1   [ RunTime:0.000293s ]
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.005019s ]
+SQL: SELECT `id`,`pid`,`title` FROM `onethink_menu` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000260s ]
+SQL: SELECT DISTINCT  `group` FROM `onethink_menu` WHERE ( pid = 1 )  [ RunTime:0.000237s ]
+SQL: SELECT `id`,`url` FROM `onethink_menu` WHERE ( `pid` = 1 ) AND ( `hide` = 0 )  [ RunTime:0.000319s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000249s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000394s ]
+INFO: [ AdminIndex ] --START--
+SQL: SHOW COLUMNS FROM `onethink_addons` [ RunTime:0.007020s ]
+SQL: SELECT `config` FROM `onethink_addons` WHERE ( `name` = 'SiteStat' ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000265s ]
+SQL: SHOW COLUMNS FROM `onethink_member` [ RunTime:0.005939s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_member` LIMIT 1   [ RunTime:0.000322s ]
+SQL: SHOW COLUMNS FROM `onethink_action_log` [ RunTime:0.005579s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_action_log` LIMIT 1   [ RunTime:0.000334s ]
+SQL: SHOW COLUMNS FROM `onethink_document` [ RunTime:0.005684s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_document` LIMIT 1   [ RunTime:0.000276s ]
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.005567s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_category` LIMIT 1   [ RunTime:0.000247s ]
+SQL: SHOW COLUMNS FROM `onethink_model` [ RunTime:0.006086s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_model` LIMIT 1   [ RunTime:0.000253s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000095s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.053012s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.004980s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005124s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000878s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000998s ]
+INFO: Run SiteStat [ RunTime:0.052128s ]
+SQL: SELECT `config` FROM `onethink_addons` WHERE ( `name` = 'SystemInfo' ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000334s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000110s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.123114s ]
+SQL: select version() as v; [ RunTime:0.000411s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.007114s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.063973s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000022s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.070241s ]
+INFO: Run SystemInfo [ RunTime:0.070299s ]
+SQL: SELECT `config` FROM `onethink_addons` WHERE ( `name` = 'DevTeam' ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000348s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000097s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.131950s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.004708s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.074057s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000021s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.077914s ]
+INFO: Run DevTeam [ RunTime:0.007615s ]
+INFO: [ AdminIndex ] --END-- [ RunTime:0.130261s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.005186s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.074057s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000019s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.078350s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001225s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001355s ]
+
+[ 2016-04-22T17:21:52+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/11.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.001987s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 11 ) LIMIT 1   [ RunTime:0.000131s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000324s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000551s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.005599s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000301s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 120 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.005904s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000510s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000102s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.364017s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.007989s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008149s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000857s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000984s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.009472s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008149s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000023s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000469s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001353s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001477s ]
+
+[ 2016-04-22T17:28:21+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/12.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.005540s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 12 ) LIMIT 1   [ RunTime:0.000685s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000315s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000481s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.007054s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000265s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 120 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.007433s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000312s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000089s ]
+INFO: [ template_filter ] --END-- [ RunTime:-1.408124s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.007223s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007363s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000622s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000750s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.008401s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007363s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000019s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000399s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001051s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001158s ]
+
+[ 2016-04-22T17:28:34+08:00 ] 218.91.152.220 /index.php?s=/Admin/Config/group.html
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.004728s ]
+SQL: SELECT * FROM `onethink_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000288s ]
+SQL: SELECT `id` FROM `onethink_menu` WHERE ( url like '%Config/group%' ) LIMIT 1   [ RunTime:0.000204s ]
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.006221s ]
+SQL: SELECT `id`,`pid`,`title` FROM `onethink_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000289s ]
+SQL: SELECT DISTINCT  `group` FROM `onethink_menu` WHERE ( pid = 68 )  [ RunTime:0.000357s ]
+SQL: SELECT `id`,`url` FROM `onethink_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.000238s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000267s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000227s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000243s ]
+SQL: SHOW COLUMNS FROM `onethink_config` [ RunTime:0.004566s ]
+SQL: SELECT `id`,`name`,`title`,`extra`,`value`,`remark`,`type` FROM `onethink_config` WHERE ( `status` = 1 ) AND ( `group` = 1 ) ORDER BY sort  [ RunTime:0.000378s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000151s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000224s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.028364s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028453s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000306s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000356s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000466s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000521s ]
+
+[ 2016-04-22T17:28:36+08:00 ] 218.91.152.220 /index.php?s=/Admin/Config/index.html
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.005364s ]
+SQL: SELECT * FROM `onethink_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000369s ]
+SQL: SELECT `id` FROM `onethink_menu` WHERE ( url like '%Config/index%' ) LIMIT 1   [ RunTime:0.000687s ]
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.005765s ]
+SQL: SELECT `id`,`pid`,`title` FROM `onethink_menu` WHERE ( id=70 ) LIMIT 1   [ RunTime:0.000568s ]
+SQL: SELECT `id`,`pid`,`title` FROM `onethink_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000298s ]
+SQL: SELECT DISTINCT  `group` FROM `onethink_menu` WHERE ( pid = 68 )  [ RunTime:0.000260s ]
+SQL: SELECT `id`,`url` FROM `onethink_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.000292s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000333s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000282s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000422s ]
+SQL: SHOW COLUMNS FROM `onethink_config` [ RunTime:0.005612s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_config` WHERE ( `status` = 1 ) LIMIT 1   [ RunTime:0.000565s ]
+SQL: SELECT `id`,`name`,`type`,`title`,`group`,`extra`,`remark`,`create_time`,`update_time`,`status`,`value`,`sort` FROM `onethink_config` WHERE ( `status` = 1 ) ORDER BY sort,id LIMIT 0,10   [ RunTime:0.000785s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000376s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000540s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.050139s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.050301s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000724s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000847s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001285s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001445s ]
+
+[ 2016-04-22T17:28:38+08:00 ] 218.91.152.220 /index.php?s=/Admin/Model/index.html
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.005466s ]
+SQL: SELECT * FROM `onethink_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000352s ]
+SQL: SELECT `id` FROM `onethink_menu` WHERE ( url like '%Model/index%' ) LIMIT 1   [ RunTime:0.000625s ]
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.005053s ]
+SQL: SELECT `id`,`pid`,`title` FROM `onethink_menu` WHERE ( id=58 ) LIMIT 1   [ RunTime:0.000477s ]
+SQL: SELECT `id`,`pid`,`title` FROM `onethink_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000287s ]
+SQL: SELECT DISTINCT  `group` FROM `onethink_menu` WHERE ( pid = 68 )  [ RunTime:0.000257s ]
+SQL: SELECT `id`,`url` FROM `onethink_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.000293s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000328s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000284s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000336s ]
+SQL: SHOW COLUMNS FROM `onethink_model` [ RunTime:0.005468s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_model` WHERE ( `status` > -1 ) LIMIT 1   [ RunTime:0.004813s ]
+SQL: SELECT `id`,`name`,`title`,`extend`,`relation`,`need_pk`,`field_sort`,`field_group`,`attribute_list`,`template_list`,`template_add`,`template_edit`,`list_grid`,`list_row`,`search_key`,`search_list`,`create_time`,`update_time`,`status`,`engine_type` FROM `onethink_model` WHERE ( `status` > -1 ) ORDER BY id desc LIMIT 0,10   [ RunTime:0.000776s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000363s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000526s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.040873s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.041067s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000712s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000837s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001267s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001401s ]
+
+[ 2016-04-22T17:28:40+08:00 ] 218.91.152.220 /index.php?s=/Admin/Category/index.html
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.005661s ]
+SQL: SELECT * FROM `onethink_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000566s ]
+SQL: SELECT `id` FROM `onethink_menu` WHERE ( url like '%Category/index%' ) LIMIT 1   [ RunTime:0.000738s ]
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.005281s ]
+SQL: SELECT `id`,`pid`,`title` FROM `onethink_menu` WHERE ( id=80 ) LIMIT 1   [ RunTime:0.000526s ]
+SQL: SELECT `id`,`pid`,`title` FROM `onethink_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000312s ]
+SQL: SELECT DISTINCT  `group` FROM `onethink_menu` WHERE ( pid = 68 )  [ RunTime:0.000271s ]
+SQL: SELECT `id`,`url` FROM `onethink_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.000576s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000416s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000336s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000311s ]
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.008713s ]
+SQL: SELECT `id`,`name`,`title`,`sort`,`pid`,`allow_publish`,`status` FROM `onethink_category` WHERE ( `status` > -1 ) ORDER BY sort  [ RunTime:0.000896s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000338s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000520s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000124s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.113403s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000201s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.127794s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.015526s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015787s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001089s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001304s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000122s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.143782s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.011723s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.003226s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000024s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.013746s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.012146s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.003226s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000021s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.014133s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.012557s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.003226s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000021s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.014541s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001648s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001827s ]
+
+[ 2016-04-22T17:28:41+08:00 ] 218.91.152.220 /index.php?s=/Admin/Config/group.html
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.006349s ]
+SQL: SELECT * FROM `onethink_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000475s ]
+SQL: SELECT `id` FROM `onethink_menu` WHERE ( url like '%Config/group%' ) LIMIT 1   [ RunTime:0.000275s ]
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.007231s ]
+SQL: SELECT `id`,`pid`,`title` FROM `onethink_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000313s ]
+SQL: SELECT DISTINCT  `group` FROM `onethink_menu` WHERE ( pid = 68 )  [ RunTime:0.000270s ]
+SQL: SELECT `id`,`url` FROM `onethink_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.000299s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000319s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000443s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000374s ]
+SQL: SHOW COLUMNS FROM `onethink_config` [ RunTime:0.007435s ]
+SQL: SELECT `id`,`name`,`title`,`extra`,`value`,`remark`,`type` FROM `onethink_config` WHERE ( `status` = 1 ) AND ( `group` = 1 ) ORDER BY sort  [ RunTime:0.000369s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000590s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000865s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.056154s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.056392s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001259s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001478s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001899s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002137s ]
+
+[ 2016-04-22T17:28:43+08:00 ] 218.91.152.220 /index.php?s=/Admin/Config/group/id/5.html
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.002477s ]
+SQL: SELECT * FROM `onethink_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000137s ]
+SQL: SELECT `id` FROM `onethink_menu` WHERE ( url like '%Config/group%' ) LIMIT 1   [ RunTime:0.000108s ]
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.002137s ]
+SQL: SELECT `id`,`pid`,`title` FROM `onethink_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000117s ]
+SQL: SELECT DISTINCT  `group` FROM `onethink_menu` WHERE ( pid = 68 )  [ RunTime:0.000110s ]
+SQL: SELECT `id`,`url` FROM `onethink_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.000128s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000136s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000114s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000120s ]
+SQL: SHOW COLUMNS FROM `onethink_config` [ RunTime:0.002212s ]
+SQL: SELECT `id`,`name`,`title`,`extra`,`value`,`remark`,`type` FROM `onethink_config` WHERE ( `status` = 1 ) AND ( `group` = 5 ) ORDER BY sort  [ RunTime:0.000332s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000153s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000228s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.016552s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016618s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000292s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000341s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000448s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000501s ]
+
+[ 2016-04-22T17:28:44+08:00 ] 218.91.152.220 /index.php?s=/Admin/Config/group/id/4.html
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.005919s ]
+SQL: SELECT * FROM `onethink_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000493s ]
+SQL: SELECT `id` FROM `onethink_menu` WHERE ( url like '%Config/group%' ) LIMIT 1   [ RunTime:0.000312s ]
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.005529s ]
+SQL: SELECT `id`,`pid`,`title` FROM `onethink_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000370s ]
+SQL: SELECT DISTINCT  `group` FROM `onethink_menu` WHERE ( pid = 68 )  [ RunTime:0.000355s ]
+SQL: SELECT `id`,`url` FROM `onethink_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.000370s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000403s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000356s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000370s ]
+SQL: SHOW COLUMNS FROM `onethink_config` [ RunTime:0.005830s ]
+SQL: SELECT `id`,`name`,`title`,`extra`,`value`,`remark`,`type` FROM `onethink_config` WHERE ( `status` = 1 ) AND ( `group` = 4 ) ORDER BY sort  [ RunTime:0.002789s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000365s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000538s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.042679s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.042901s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000763s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000894s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001164s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001300s ]
+
+[ 2016-04-22T17:29:02+08:00 ] 218.91.152.220 /index.php?controller=home
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.005912s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000388s ]
+SQL: SHOW COLUMNS FROM `onethink_document` [ RunTime:0.005624s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`status` FROM `onethink_document` WHERE ( `status` = 1 ) AND ( `pid` = 0 ) AND ( `create_time` < 1461317342 ) AND ( deadline = 0 OR deadline > 1461317342 ) ORDER BY `id` DESC  [ RunTime:0.000652s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000097s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000259s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.014994s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015145s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000678s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000798s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001182s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001313s ]
+
+[ 2016-04-22T17:29:03+08:00 ] 218.91.152.220 /index.php?s=/Admin/Index/index.html
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.005759s ]
+SQL: SELECT * FROM `onethink_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000439s ]
+SQL: SELECT `id` FROM `onethink_menu` WHERE ( url like '%Index/index%' ) LIMIT 1   [ RunTime:0.000244s ]
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.005365s ]
+SQL: SELECT `id`,`pid`,`title` FROM `onethink_menu` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000288s ]
+SQL: SELECT DISTINCT  `group` FROM `onethink_menu` WHERE ( pid = 1 )  [ RunTime:0.000273s ]
+SQL: SELECT `id`,`url` FROM `onethink_menu` WHERE ( `pid` = 1 ) AND ( `hide` = 0 )  [ RunTime:0.000272s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000272s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000445s ]
+INFO: [ AdminIndex ] --START--
+SQL: SHOW COLUMNS FROM `onethink_addons` [ RunTime:0.006012s ]
+SQL: SELECT `config` FROM `onethink_addons` WHERE ( `name` = 'SiteStat' ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000422s ]
+SQL: SHOW COLUMNS FROM `onethink_member` [ RunTime:0.005841s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_member` LIMIT 1   [ RunTime:0.000284s ]
+SQL: SHOW COLUMNS FROM `onethink_action_log` [ RunTime:0.005187s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_action_log` LIMIT 1   [ RunTime:0.000261s ]
+SQL: SHOW COLUMNS FROM `onethink_document` [ RunTime:0.006032s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_document` LIMIT 1   [ RunTime:0.000329s ]
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.005838s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_category` LIMIT 1   [ RunTime:0.000264s ]
+SQL: SHOW COLUMNS FROM `onethink_model` [ RunTime:0.006781s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_model` LIMIT 1   [ RunTime:0.000364s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000105s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.054355s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.005595s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005753s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000701s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000828s ]
+INFO: Run SiteStat [ RunTime:0.053064s ]
+SQL: SELECT `config` FROM `onethink_addons` WHERE ( `name` = 'SystemInfo' ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000434s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000118s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.126302s ]
+SQL: select version() as v; [ RunTime:0.000627s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.008164s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.064629s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000024s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.072174s ]
+INFO: Run SystemInfo [ RunTime:0.072235s ]
+SQL: SELECT `config` FROM `onethink_addons` WHERE ( `name` = 'DevTeam' ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000313s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000106s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.136169s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.005442s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.075856s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000024s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.080611s ]
+INFO: Run DevTeam [ RunTime:0.008378s ]
+INFO: [ AdminIndex ] --END-- [ RunTime:0.133914s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.005943s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.075856s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000027s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.081132s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001748s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001940s ]
+
+[ 2016-04-22T17:29:09+08:00 ] 218.91.152.220 /index.php?controller=123
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.006016s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000378s ]
+SQL: SHOW COLUMNS FROM `onethink_document` [ RunTime:0.006075s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`status` FROM `onethink_document` WHERE ( `status` = 1 ) AND ( `pid` = 0 ) AND ( `create_time` < 1461317349 ) AND ( deadline = 0 OR deadline > 1461317349 ) ORDER BY `id` DESC  [ RunTime:0.000675s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000095s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000249s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.015530s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015675s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000716s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000839s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001538s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001672s ]
+
+[ 2016-04-22T17:29:09+08:00 ] 218.91.152.220 /index.php?s=/Admin/Index/index.html
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.005762s ]
+SQL: SELECT * FROM `onethink_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000373s ]
+SQL: SELECT `id` FROM `onethink_menu` WHERE ( url like '%Index/index%' ) LIMIT 1   [ RunTime:0.000302s ]
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.005532s ]
+SQL: SELECT `id`,`pid`,`title` FROM `onethink_menu` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000296s ]
+SQL: SELECT DISTINCT  `group` FROM `onethink_menu` WHERE ( pid = 1 )  [ RunTime:0.000261s ]
+SQL: SELECT `id`,`url` FROM `onethink_menu` WHERE ( `pid` = 1 ) AND ( `hide` = 0 )  [ RunTime:0.000268s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000298s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000469s ]
+INFO: [ AdminIndex ] --START--
+SQL: SHOW COLUMNS FROM `onethink_addons` [ RunTime:0.005604s ]
+SQL: SELECT `config` FROM `onethink_addons` WHERE ( `name` = 'SiteStat' ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000294s ]
+SQL: SHOW COLUMNS FROM `onethink_member` [ RunTime:0.005462s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_member` LIMIT 1   [ RunTime:0.000287s ]
+SQL: SHOW COLUMNS FROM `onethink_action_log` [ RunTime:0.005525s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_action_log` LIMIT 1   [ RunTime:0.000277s ]
+SQL: SHOW COLUMNS FROM `onethink_document` [ RunTime:0.005961s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_document` LIMIT 1   [ RunTime:0.000333s ]
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.062994s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_category` LIMIT 1   [ RunTime:0.000119s ]
+SQL: SHOW COLUMNS FROM `onethink_model` [ RunTime:0.002757s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_model` LIMIT 1   [ RunTime:0.000163s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000072s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.104685s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003789s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003893s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000444s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000535s ]
+INFO: Run SiteStat [ RunTime:0.102433s ]
+SQL: SELECT `config` FROM `onethink_addons` WHERE ( `name` = 'SystemInfo' ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000183s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000051s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.161468s ]
+SQL: select version() as v; [ RunTime:0.000233s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003346s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.053691s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000017s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.056595s ]
+INFO: Run SystemInfo [ RunTime:0.056643s ]
+SQL: SELECT `config` FROM `onethink_addons` WHERE ( `name` = 'DevTeam' ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000159s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000075s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.167495s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003313s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.059204s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000017s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.062070s ]
+INFO: Run DevTeam [ RunTime:0.005421s ]
+INFO: [ AdminIndex ] --END-- [ RunTime:0.164700s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003679s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.059204s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000016s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.062421s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000759s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000852s ]
+
+[ 2016-04-22T17:30:42+08:00 ] 218.91.152.220 /index.php?s=/Home/Project/index/id/11.html&from=singlemessage&isappinstalled=0
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.002214s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 11 ) LIMIT 1   [ RunTime:0.000160s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000128s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000207s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.005835s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000452s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 120 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.006293s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000313s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000102s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.315554s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.008474s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008630s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000836s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000959s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.009917s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008630s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000022s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000456s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001312s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001440s ]
+
+[ 2016-04-22T19:01:37+08:00 ] 101.226.68.215 /index.php?s=/Home/Project/index/id/13.html
+SQL: SHOW COLUMNS FROM `onethink_project` [ RunTime:0.005409s ]
+SQL: SELECT * FROM `onethink_project` WHERE ( `id` = 13 ) LIMIT 1   [ RunTime:0.000319s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Application\Home\Controller\ProjectController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000335s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000497s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.006160s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000339s ]
+NOTIC: [8] Undefined variable: category E:\freehost\www\linshikongjian\web\Runtime\Cache\Home\5d133778d7de97e139009fa0c8819324.php 第 120 行.
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.009239s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `onethink_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000344s ]
+NOTIC: [8] Undefined index: _ E:\freehost\www\linshikongjian\web\Application\Home\Widget\CategoryWidget.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000089s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.350362s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.007462s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007622s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000745s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000853s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.008676s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007622s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000019s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000316s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001216s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001328s ]
+
