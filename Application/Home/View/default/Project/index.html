@@ -7,7 +7,7 @@
       <form class="login-form" action="{:U(Project/index)}" method="post">
         	<table class="table table-bordered table-striped responsive-utilities">
               <tr>
-                  <td width="20%">评价编号</td>
+                  <td width="25%">评价编号</td>
                   <td>{$data.no}</td>
               </tr>
               <tr>
@@ -38,9 +38,11 @@
                                 <td>{$vo.duty}</td>
                                 <td>{$vo.company}</td>
 		                        </tr>
+                            <?php $staffList[] = $vo['name']."[".$vo['department']."]"; ?>
                             </volist>
 		                    </tbody>
 		                  </table>
+                      <?php $staffStr = implode($staffList, ',') ?>
                   </td>
               </tr>
               <tr>
@@ -81,9 +83,9 @@
         // url += window.location.href;
         wx.onMenuShareAppMessage({
             title: '请您评价', // 分享标题
-            desc: '请您对编号{$data.no}的服务进行评价。', // 分享描述
+            desc: '提请您对编号 {$data.no} 中 {$staffStr} 等服务进行评价。', // 分享描述
             link: url, // 分享链接
-            imgUrl: '<?php echo "http://".I("server.HTTP_HOST")."/img/pingjia.png" ?>', // 分享图标
+            imgUrl: '<?php echo "http://".I("server.HTTP_HOST")."/img/main.jpg" ?>', // 分享图标
             type: '', // 分享类型,music、video或link，不填默认为link
             dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
         });

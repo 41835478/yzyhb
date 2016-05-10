@@ -7,7 +7,7 @@
     <!-- 按钮工具栏 -->
     <div class="cf">
         <div class="fl">
-            <!-- <a class="btn" href="{:U("Project/projectAdd")}">新增</a> -->
+            <button class="btn ajax-post confirm" url="{:U('Project/rankDel')}" target-form="ids">批量删除</button>
         </div>
     </div>
 
@@ -22,11 +22,12 @@
                     </th>
                     <th>评价人昵称</th>
                     <th>头像</th>
-                    <th>事件编号</th>
-                    <th>总体评价</th>
+                    <th>编号</th>
+                    <th>总体</th>
                     <th>服务质量</th>
                     <th>服务效率</th>
                     <th>服务态度</th>
+                    <th>留言</th>
                     <th>评价时间</th>
                     <th>操作</th>
                 </tr>
@@ -43,8 +44,9 @@
                     <td>{$vo.rank_info_1}星</td>
                     <td>{$vo.rank_info_2}星</td>
                     <td>{$vo.rank_info_3}星</td>
+                    <td>{$vo.speak}</td>
                     <td>{$vo.rank_date|date="Y-m-d",###}</td>
-                    <td><a href="{:U('Project/projectDel')}&ids={$vo.id}" class="confirm ajax-get">删除</a></td>  
+                    <td><a href="{:U('Project/rankDel')}&ids={$vo.id}" class="confirm ajax-get">删除</a></td>  
                 </tr>
                 </volist>
             </tbody>

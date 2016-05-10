@@ -7,7 +7,7 @@
       <form class="login-form" action="{:U(Project/specialIndex)}" method="post">
           <table class="table table-bordered table-striped responsive-utilities">
               <tr>
-                  <td width="20%">评价人</td>
+                  <td width="27%">评价人(企)</td>
                   <td>{$data.name}</td>
               </tr>
               <tr>
@@ -75,10 +75,10 @@
           url += "http://" + window.location.host + "/index.php?s=/Home/Project/specialindex/id/<?php echo $_GET['id']; ?>&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect";
       wx.ready(function () {
         wx.onMenuShareAppMessage({
-            title: '请您评价', // 分享标题
-            desc: '请您对编号{$data.no}的服务进行评价。', // 分享描述
+            title: '请{$data.name}进行评价', // 分享标题
+            desc: '提请 {$data.name} 对 {$data.department} 关于编号{$data.no} 的服务进行评价。', // 分享描述
             link: url, // 分享链接
-            imgUrl: '<?php echo "http://".I("server.HTTP_HOST")."/img/pingjia.png" ?>', // 分享图标
+            imgUrl: '<?php echo "http://".I("server.HTTP_HOST")."/img/main.jpg" ?>', // 分享图标
             type: '', // 分享类型,music、video或link，不填默认为link
             dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
         });
