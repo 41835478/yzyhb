@@ -11,8 +11,8 @@
                   <td>{$data.name}</td>
               </tr>
               <tr>
-                  <td>评价编号</td>
-                  <td>{$data.no}</td>
+                  <td>原事项编号</td>
+                  <td>{$data.num}</td>
               </tr>
               <tr>
                   <td>受评部门</td>
@@ -20,26 +20,26 @@
               </tr>
               <tr>
                   <td>评价事项</td>
-                  <td>{$data.content}</td>
+                  <td style="text-align:left;">{$data.content}</td>
               </tr>
               <tr>
                   <td>办理结果</td>
-                  <td>{$data.result}</td>
+                  <td style="text-align:left;">{$data.result}</td>
               </tr>
               <tr>
                   <td>综合评价</td>
                   <td><input type="radio" name="rank" id="optionsRadios1" value="1"> 好评
-                      &nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp;&nbsp;
                       <input type="radio" name="rank" id="optionsRadios2" value="2"> 中评
-                      &nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp;&nbsp;
                       <input type="radio" name="rank" id="optionsRadios3" value="3"> 差评
                   </td>
               </tr>   
               <tr>
                   <td>评价详情</td>
                   <td>
-                      <label>服务质量：&nbsp;<span id="star_1"></span></label>
-                      <label>服务效率：&nbsp;<span id="star_2"></span></label>
+                      <label style="margin-bottom:10px;">服务质量：&nbsp;<span id="star_1"></span></label>
+                      <label style="margin-bottom:10px;">服务效率：&nbsp;<span id="star_2"></span></label>
                       <label>服务态度：&nbsp;<span id="star_3"></span></label>
                   </td>
               </tr>
@@ -48,12 +48,12 @@
                   <td><textarea name="speak" style="width:90%; height:120px"></textarea></td>
               </tr>
               <tr>
-                <td colspan="2">此评价由扬州市优化企业发展环境办公室适时推送，评价结果由优化办采集，对评价人保密。</td>
+                <td colspan="2">此评价由扬州市优化企业发展环境办公室适时推送，评价结果由优化办采集，为评价人保密。</td>
               </tr>
           </table>
     			<br />
           <div class="control-group">
-              <div class="controls">
+              <div class="controls text-center">
                   <input type="hidden" name="project_id" value="{$data.id}">
                   <input type="hidden" name="project_no" value="{$data.no}">
                   <button type="submit" class="btn">提交</button>
@@ -76,7 +76,7 @@
       wx.ready(function () {
         wx.onMenuShareAppMessage({
             title: '请{$data.name}进行评价', // 分享标题
-            desc: '提请 {$data.name} 对 {$data.department} 关于编号{$data.no} 的服务进行评价。', // 分享描述
+            desc: '提请 {$data.name} 对 {$data.department} 关于评价编号 {$data.num} 的服务进行评价。', // 分享描述
             link: url, // 分享链接
             imgUrl: '<?php echo "http://".I("server.HTTP_HOST")."/img/main.jpg" ?>', // 分享图标
             type: '', // 分享类型,music、video或link，不填默认为link

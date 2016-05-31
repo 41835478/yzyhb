@@ -21,13 +21,14 @@
                     <th class="row-selected row-selected">
                         <input class="check-all" type="checkbox">
                     </th>
-                    <th>评价编号</th>
+                    <th>原事项编号</th>
+                    <th>评价代码</th>
                     <th>事件类型</th>
                     <th>受评类型</th>
                     <th>相关人员</th>
                     <th>总体评价</th>
                     <th>创建时间</th>
-                    <th>操作</th>
+                    <th width="20%">操作</th>
                 </tr>
             </thead>
             <!-- 列表 -->
@@ -35,6 +36,7 @@
                 <volist name="list" id="vo">
                 <tr>
                     <td><input class="ids" type="checkbox" value="{$vo.id}" name="ids[]"></td>
+                    <td>{$vo.num}</td>
                     <td><a href="{:U('Project/projectView',array('id'=>$vo['id']))}" target="blank">{$vo.no}</a></td>
                     <td><?php echo $conf['PROJECT_TYPE'][$vo['type']]; ?></td>
                     <td><?php echo $conf['TO'][$vo['to']]; ?></td>

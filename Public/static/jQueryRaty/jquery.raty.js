@@ -54,7 +54,7 @@
 					}).appendTo(self);
 
 					if (self.opt.space) {
-						$this.append((i < self.opt.number) ? '&#160;&#160;' : '');
+						$this.append((i < self.opt.number) ? '&#160;&#160;&#160;&#160;' : '');
 					}
 				}
 

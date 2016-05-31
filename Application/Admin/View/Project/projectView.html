@@ -10,7 +10,11 @@
     </div>
     <form action="{:U()}" method="post" class="form-horizontal">
         <div class="form-item">
-            <label class="item-label">评价编号<span class="check-tips"></span></label>
+            <label class="item-label">原事项编号<span class="check-tips"></span></label>
+            <div class="controls"><input type="text" class="text" name="num" value="{$data.num}"></div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">评价代码<span class="check-tips"></span></label>
             <div class="controls"><span>{$data.no}</span></div>
         </div>
         <div class="form-item">
@@ -60,6 +64,7 @@
                 差评数：<span style="color:grey">{$data.rank.r_3}</span></div>
         </div>
         <div class="form-item">
+            <input type="hidden" name="id" value="{$data.id}">
             <button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
             <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
         </div>

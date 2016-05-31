@@ -20,13 +20,14 @@
                     <th class="row-selected row-selected">
                         <input class="check-all" type="checkbox">
                     </th>
-                    <th>评价编号</th>
-                    <th>评价人</th>
-                    <th>评价事项</th>
+                    <th width="8%">原事项编号</th>
+                    <th width="9%">评价代码</th>
+                    <th width="7%">评价人</th>
+                    <th width="18%">评价事项</th>
                     <th>办理结果</th>
-                    <th>受评部门</th>
-                    <th>创建时间</th>
-                    <th>操作</th>
+                    <th width="8%">受评部门</th>
+                    <th width="8%">创建时间</th>
+                    <th width="16%">操作</th>
                 </tr>
             </thead>
             <!-- 列表 -->
@@ -34,9 +35,10 @@
                 <volist name="list" id="vo">
                 <tr>
                     <td><input class="ids" type="checkbox" value="{$vo.id}" name="ids[]"></td>
+                    <td>{$vo.num}</td>
                     <td><a href="{:U('Project/specialView',array('id'=>$vo['id']))}" target="blank">{$vo.no}</a></td>
                     <td>{$vo.name}</td>
-                    <td>{$vo.content|msubstr=0,15}</td>
+                    <td><p title="{$vo.content}">{$vo.content}</p></td>
                     <td>{$vo.result}</td>
                     <td>{$vo.department}</td>
                     <td>{$vo.date|date="Y-m-d",###}</td>

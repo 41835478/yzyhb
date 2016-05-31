@@ -9,6 +9,12 @@
     </div>
     <form action="{:U(Project/projectAdd)}" method="post" class="form-horizontal">
         <div class="form-item">
+            <label class="item-label">原事项编号</label>
+            <div class="controls">
+                <input type="text" class="text" name="num" >
+            </div>      
+        </div>
+        <div class="form-item">
             <label class="item-label">事件类型<span class="check-tips"></span></label>
             <div class="controls">
                 <select name="type">

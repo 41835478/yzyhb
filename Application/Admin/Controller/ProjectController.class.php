@@ -76,6 +76,13 @@ class ProjectController extends AdminController {
 		$Rank    = D('Rank');
 		$Project = D('Project');
 
+		if (I('post.')) {
+			 // if(!$Project->create()){ $this->error($Project->getError()); }
+			 $update = I('post.');
+			 $result = $Project->save($update);
+			 if ($result) { $this->success('更新事件成功！'); }
+		}
+
 		$map['id']     = I('get.id');
 		$data          = $Project->where($map)->find();
 		$data['staff'] = unserialize($data['staff']);
@@ -88,7 +95,7 @@ class ProjectController extends AdminController {
 		$this->assign('data',$data);
 		$this->assign('conf',$conf);
  		$this->meta_title = '事件详情';
-        $this->display();
+    $this->display();
 	}
 
 	function specialIndex() {
@@ -119,6 +126,13 @@ class ProjectController extends AdminController {
 
 	function specialView() {
 		$map['id'] = I('get.id');
+
+		if (I('post.')) {
+			 $update = I('post.');
+			 $result = D('Special')->save($update);
+			 if ($result) { $this->success('更新事件成功！'); }
+		}
+
 		$data = D('Special')->where($map)->find();
 		$conf['RANK'] = C('RANK');
 		$this->assign('data',$data);
